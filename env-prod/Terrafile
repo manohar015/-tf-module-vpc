@@ -1,3 +1,0 @@
-vpc:
-    source:  "https://github.com/b50-clouddevops/tf-module-vpc.git"
-    version: "main"
