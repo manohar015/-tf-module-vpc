@@ -1,5 +1,5 @@
 resource "aws_subnet" "main" {
-  count      = lenght(var.)
+  count      = lenght(var.PUBLIC_SUBNET_CIDR)
   vpc_id     = aws_vpc.main.id
   cidr_block = ""
 
@@ -7,4 +7,3 @@ resource "aws_subnet" "main" {
     Name = "pub-Main1"
   }
 }
-
