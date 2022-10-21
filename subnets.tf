@@ -1,5 +1,5 @@
 resource "aws_subnet" "main" {
-  count      = 2
+  count      = 
   vpc_id     = aws_vpc.main.id
   cidr_block = ""
 
