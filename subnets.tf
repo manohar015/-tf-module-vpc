@@ -1,5 +1,5 @@
 resource "aws_subnet" "main" {
-  count      = 
+  count      = lenght(var.)
   vpc_id     = aws_vpc.main.id
   cidr_block = ""
 
