@@ -5,6 +5,6 @@ resource "aws_subnet" "main" {
   availability_zone   = element(var.AZ, count.index)
 
   tags = {
-    Name = "${var.ENV}"
+    Name = "${var.ENV}-pub-${element(var.AZ, count.index)}"
   }
 }
