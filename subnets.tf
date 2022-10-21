@@ -1,4 +1,5 @@
-resource "aws_subnet" "pub-main1" {
+resource "aws_subnet" "main" {
+  count      = 2
   vpc_id     = aws_vpc.main.id
   cidr_block = ""
 
