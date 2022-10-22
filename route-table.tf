@@ -8,6 +8,11 @@ resource "aws_route_table" "public-rt" {
     gateway_id = aws_internet_gateway.igw.id
   }
 
+  route {
+    cidr_block = var.VPC_CIDR
+    gateway_id = aws_internet_gateway.igw.id
+  }
+
   tags = {
     Name = "${var.ENV}-pub-route-table"
   }
