@@ -15,10 +15,10 @@ resource "aws_eip" "ngw-eip" {
 # Creates NAT Gateway
 resource "aws_nat_gateway" "ngw" {
   allocation_id = aws_eip.ngw-eip.id
-  subnet_id     = aws_subnet.public.*.id
+  subnet_id     = aws_subnet.public.*.id[0]
 
   tags = {
-    Name = "gw NAT"
+    Name = "${var.ENV}-ngw"
   }
 
   # To ensure proper ordering, it is recommended to add an explicit dependency
