@@ -38,7 +38,7 @@ resource "aws_route_table" "private-rt" {
   }
 
   tags = {
-    Name = "${var.ENV}-pub-route-table"
+    Name = "${var.ENV}-prv-route-table"
   }
 }
 
