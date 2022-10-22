@@ -7,10 +7,15 @@ resource "aws_internet_gateway" "igw" {
   }
 }
 
+# Allocates EIP 
+resource "aws_eip" "ngw-eip" {
+  vpc      = true
+}
+
 # Creates NAT Gateway
 resource "aws_nat_gateway" "ngw" {
-  allocation_id = aws_eip.example.id
-  subnet_id     = aws_subnet.example.id
+  allocation_id = aws_eip.ngw-eip.id
+  subnet_id     = aws_subnet.public.*.id
 
   tags = {
     Name = "gw NAT"
