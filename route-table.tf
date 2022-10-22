@@ -7,6 +7,6 @@ resource "aws_route_table" "public-rt" {
   }
 
   tags = {
-    Name = "${var.ENV}-prv-${element(var.AZ, count.index)}"
+    Name = "${var.ENV}-pub-route-table"
   }
 }
