@@ -10,3 +10,8 @@ resource "aws_route_table" "public-rt" {
     Name = "${var.ENV}-pub-route-table"
   }
 }
+
+resource "aws_route_table_association" "public-rt-association" {
+  subnet_id      = aws_subnet.foo.id
+  route_table_id = aws_route_table.bar.id
+}
