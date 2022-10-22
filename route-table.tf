@@ -9,8 +9,8 @@ resource "aws_route_table" "public-rt" {
   }
 
   route {
-    cidr_block = var.VPC_CIDR
-    gateway_id = aws_internet_gateway.igw.id
+    cidr_block                = var.VPC_CIDR
+    vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
   }
 
   tags = {
@@ -27,3 +27,21 @@ resource "aws_route_table_association" "public-rt-association" {
 
 
 # Creates Private Route-table
+
+resource "aws_route_table" "private-rt" {
+  vpc_id = aws_vpc.main.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.igw.id
+  }
+
+  route {
+    cidr_block                = var.VPC_CIDR
+    vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
+  }
+
+  tags = {
+    Name = "${var.ENV}-pub-route-table"
+  }
+}
