@@ -6,5 +6,4 @@ resource "aws_vpc_peering_connection" "peer" {
   tags = {
     Name = "${var.ENV}-def-vpc-peering"
   }
-
 }
