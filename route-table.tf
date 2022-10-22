@@ -37,6 +37,11 @@ resource "aws_route_table" "private-rt" {
     vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
   }
 
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_nat_gateway.ngw.igw.id
+  }
+
   tags = {
     Name = "${var.ENV}-prv-route-table"
   }
