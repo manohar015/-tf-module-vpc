@@ -13,3 +13,11 @@ output "PUBLIC_SUBNET_IDS" {
 output "PRIVATE_SUBNET_IDS" {
     value =  aws_subnet.private.*.id
 }
+
+output "PUBLIC_SUBNET_CIDR" {
+    value =   aws_subnet.private.*.cidr_block
+}
+
+output "PRIVATE_SUBNET_CIDR" {
+    value = 
+}"
