@@ -6,6 +6,5 @@ variable "AZ" {}
 variable "DEFAULT_VPC_ID" {}
 variable "DEFAULT_VPC_CIDR" {}
 variable "DEFAULT_VPC_RT" {}
-variable ""
-Z04602961I29SHWLCRCU3
-PRIVATE_HOSTEDZONE_ID
+variable "PRIVATE_HOSTEDZONE_ID" {}
+
