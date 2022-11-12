@@ -38,7 +38,7 @@ resource "aws_route_table" "private-rt" {
         Name = "${var.ENV}-prv-route-table"
     }
 }
-  
+
 resource "aws_route_table_association" "private-rt-association" {
   count          = length(aws_subnet.private.*.id)
   subnet_id      = element(aws_subnet.private.*.id, count.index)
